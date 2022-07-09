@@ -1,7 +1,13 @@
-import { Category } from './components/Category'
+import { ListOfCategory } from './components/ListOfCategory'
+import { GlobalStyle } from './GlobalStyles'
 
-function App () {
-  return <Category />
+const App = () => {
+  return (
+    <>
+      <GlobalStyle />
+      <ListOfCategory />
+    </>
+  )
 }
 
 export default App
