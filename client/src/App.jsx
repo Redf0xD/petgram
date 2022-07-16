@@ -1,7 +1,7 @@
 import { ListOfCategory } from './components/ListOfCategory'
 import { ListOfPhotoCard } from './components/ListOfPhotoCard'
 import { Logo } from './components/Logo'
-import { GlobalStyle } from './GlobalStyles'
+import { GlobalStyle } from './styles/GlobalStyles'
 
 const App = () => {
   return (
