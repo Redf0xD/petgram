@@ -1,14 +1,19 @@
 import { Category } from '../Category'
 import { List, Items } from './styles'
-import { categories } from '../../../../api/db.json'
+import { getCategories } from '../../customHooks/getCategories'
+import { Fixed } from '../../customHooks/Fixed'
 export const ListOfCategory = () => {
+  const { categories, loading } = getCategories()
+  const { isFixed } = Fixed()
   return (
-    <List>
-      {categories.map((category) => (
-        <Items key={category.id}>
-          <Category {...category} />
-        </Items>
-      ))}
+    <List fixed={isFixed}>
+      {loading
+        ? <Items><Category /></Items>
+        : categories.map((category) => (
+          <Items key={category.id}>
+            <Category {...category} />
+          </Items>
+        ))}
     </List>
   )
 }
