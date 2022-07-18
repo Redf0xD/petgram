@@ -8,12 +8,12 @@ export const List = styled.ul`
   &::-webkit-scrollbar {
     display: none;
   }
-  ${(props) =>
+  ${props =>
     props.fixed &&
     css`
        {
         ${FadeIn({ time: '0.5s' })}
-        position: fixed;
+        position: sticky;
         top: -20px;
         left: 0;
         right: 0;
