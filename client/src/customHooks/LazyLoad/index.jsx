@@ -1,5 +1,4 @@
 import { useEffect, useRef, useState } from 'react'
-
 export const LazyLoad = () => {
   const [show, setShow] = useState(false)
   const element = useRef(null)
