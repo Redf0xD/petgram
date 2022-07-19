@@ -1,7 +1,7 @@
 import React from 'react'
-import { ListOfCategory } from './components/ListOfCategory'
-import { ListOfPhotoCard } from './components/ListOfPhotoCard'
+import { Route, Routes } from 'react-router-dom'
 import { Logo } from './components/Logo'
+import { Home } from './pages/Home'
 import { GlobalStyle } from './styles/GlobalStyles'
 
 const App = () => {
@@ -9,8 +9,12 @@ const App = () => {
     <>
       <GlobalStyle />
       <Logo />
-      <ListOfCategory />
-      <ListOfPhotoCard />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="pet">
+          <Route path=':id' element={<Home />} />
+        </Route>
+      </Routes>
     </>
   )
 }
