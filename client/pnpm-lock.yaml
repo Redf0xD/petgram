@@ -18,6 +18,7 @@ specifiers:
   react: ^18.0.0
   react-dom: ^18.0.0
   react-icons: ^4.4.0
+  react-placeholder: ^4.1.0
   standard: ^17.0.0
   styled-components: ^5.3.5
   vite: ^2.9.9
@@ -29,6 +30,7 @@ dependencies:
   react: 18.2.0
   react-dom: 18.2.0_react@18.2.0
   react-icons: 4.4.0_react@18.2.0
+  react-placeholder: 4.1.0_react@18.2.0
   styled-components: 5.3.5_biqbaboplfbrettd7655fr4n2y
 
 devDependencies:
@@ -2070,6 +2072,14 @@ packages:
 
   /react-is/16.13.1:
     resolution: {integrity: sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==}
+
+  /react-placeholder/4.1.0_react@18.2.0:
+    resolution: {integrity: sha512-z1HGD86NWJTYTQumHsmGH9jkozv4QHa9dju/vHVUd4f1svu23pf5v7QoBLBfs3kA1S9GLJaCeRMHLbO2SCdz5A==}
+    peerDependencies:
+      react: ^16.8.0 || ^17
+    dependencies:
+      react: 18.2.0
+    dev: false
 
   /react-refresh/0.13.0:
     resolution: {integrity: sha512-XP8A9BT0CpRBD+NYLLeIhld/RqG9+gktUjW1FkE+Vm7OCinbG1SshcK5tb9ls4kzvjZr9mOQc7HYgBngEyPAXg==}
