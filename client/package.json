@@ -9,6 +9,8 @@
     "lint": "standard"
   },
   "dependencies": {
+    "@apollo/client": "^3.6.9",
+    "graphql": "^16.5.0",
     "intersection-observer": "^0.12.2",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
