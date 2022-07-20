@@ -9,6 +9,7 @@ import { NotRegisteredUser } from './pages/NotRegisteredUser'
 import { User } from './pages/User'
 import { GlobalStyle } from './styles/GlobalStyles'
 import { UserContext } from './Context/User/UserContext'
+import { Navigate } from 'react-router-dom'
 
 const App = () => {
   const { isAuth } = useContext(UserContext)
@@ -27,12 +28,14 @@ const App = () => {
         </Route>
         <Route
           path="favs"
-          element={isAuth ? <Favs /> : <NotRegisteredUser />}
+          element={isAuth ? <Favs /> : <Navigate replace to="/register" />}
         />
         <Route
           path="user"
-          element={isAuth ? <User /> : <NotRegisteredUser />}
+          element={isAuth ? <User /> : <Navigate replace to="/register" />}
         />
+        <Route path="register" element={<NotRegisteredUser />} />
+        <Route path="login" element={<NotRegisteredUser />} />
       </Routes>
       <NavBar />
     </>
