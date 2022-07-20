@@ -1,7 +1,6 @@
 import React from 'react'
 import { Img, ImgWrapper, Article } from './styles'
 import { LazyLoad } from '../../customHooks/LazyLoad'
-import { useLocalStorage } from '../../customHooks/useLocalStorage'
 import { PlaceholderPhotoCard } from './placeholder'
 import { FavButton } from '../FavButton'
 import { useFavMutation } from '../../customHooks/useFavMutation'
@@ -18,7 +17,7 @@ export const PhotoCard = ({
   loading = true
 }) => {
   const { show, element } = LazyLoad()
-  const { mutation } = useFavMutation(id)
+  const [ mutation ] = useFavMutation(id)
   const handleFavClick = () => {
     mutation()
   }
