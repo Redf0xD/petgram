@@ -1,16 +1,17 @@
-import React, { useContext, useState, useEffect } from 'react'
+import React, { useContext } from 'react'
 import { useLocation, useNavigate } from 'react-router-dom'
 import { useInputValue } from '../../customHooks/useInputValue'
 import { LoginOrRegisterBtn } from '../LoginOrRegisterBtn'
 import { useRegisterMutation } from '../../customHooks/useRegisterMutation'
 import { useLoginMutation } from '../../customHooks/useLoginMutation'
 import { LogoForm } from '../LogoForm'
-import { Form, Button, Input, Logo, Error } from './styles.js'
+import { Form, Input, Logo, Error } from './styles.js'
 import { UserContext } from '../../Context/User/UserContext'
 import { FaPaw } from 'react-icons/fa'
+import { SubmitButton } from '../SubmitButton'
 
 export const UserForm = () => {
-  const { setAuth } = useContext(UserContext)
+  const { activeAuth } = useContext(UserContext)
   const { pathname } = useLocation()
   const navigate = useNavigate()
 
@@ -39,12 +40,12 @@ export const UserForm = () => {
     pathname === '/register'
       ? registerMutation({ variables: variable }).then(({ data }) => {
           const { signup } = data
-          setAuth(signup)
+          activeAuth(signup)
           navigate('/user', { replace: true })
         })
       : loginMutation({ variables: variable }).then(({ data }) => {
           const { login } = data
-          setAuth(login)
+          activeAuth(login)
           navigate('/user', { replace: true })
         })
     if (!registerError && !loginError) msgError = ''
@@ -70,7 +71,7 @@ export const UserForm = () => {
           <FaPaw /> <span>{msgError}</span>
         </Error>
       )}
-      <Button disabled={loading}>{btnText}</Button>
+      <SubmitButton disabled={loading}>{btnText}</SubmitButton>
       <LoginOrRegisterBtn />
     </Form>
   )

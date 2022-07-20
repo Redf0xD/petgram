@@ -8,7 +8,7 @@ export const Form = styled.form`
   overflow-y: auto;
   padding-bottom: 70px;
   ${prop =>
-    prop.submit &&
+    prop.Submit &&
     css`
       opacity: 0.3;
     `}
@@ -20,15 +20,7 @@ export const Input = styled.input`
   width: 100%;
 `
 
-export const Button = styled.button`
-  background: #a20a9e;
-  border-radius: 5px;
-  color: #fff;
-  height: 32px;
-  width: 100%;
-  text-align: center;
-  font-weight: bold;
-`
+
 export const Logo = styled.div`
   width: 180px;
   height: 180px;
