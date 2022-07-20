@@ -1,10 +1,17 @@
-import styled from "styled-components";
+import styled, { css } from 'styled-components'
 export const Form = styled.form`
   display: flex;
-  flex-flow: column nowrap;
+  flex-flow: column wrap;
   align-items: center;
-  padding: 0 32px ;
-  gap: 1rem;
+  padding: 0 32px;
+  gap: 0.5rem;
+  overflow-y: auto;
+  padding-bottom: 70px;
+  ${prop =>
+    prop.submit &&
+    css`
+      opacity: 0.3;
+    `}
 `
 export const Input = styled.input`
   border: 1px solid #ccc;
@@ -22,9 +29,16 @@ export const Button = styled.button`
   text-align: center;
   font-weight: bold;
 `
-
 export const Logo = styled.div`
   width: 180px;
   height: 180px;
   padding: 8px 0;
+`
+export const Error = styled.p`
+  display: flex;
+  color: #e18426;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  width: 100%;
 `
