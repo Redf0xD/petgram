@@ -32,7 +32,7 @@ const App = () => {
         />
         <Route
           path="user"
-          element={isAuth ? <User /> : <Navigate replace to="/register" />}
+          element={isAuth ? <User /> : <NotRegisteredUser />}
         />
         <Route path="register" element={<NotRegisteredUser />} />
         <Route path="login" element={<NotRegisteredUser />} />
