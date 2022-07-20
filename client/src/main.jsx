@@ -46,13 +46,13 @@ const client = new ApolloClient({
 })
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <UserProvider>
-    <HashRouter>
-      <ApolloProvider client={client}>
+  <ApolloProvider client={client}>
+    <UserProvider>
+      <HashRouter>
         <React.StrictMode>
           <App />
         </React.StrictMode>
-      </ApolloProvider>
-    </HashRouter>
-  </UserProvider>
+      </HashRouter>
+    </UserProvider>
+  </ApolloProvider>
 )
