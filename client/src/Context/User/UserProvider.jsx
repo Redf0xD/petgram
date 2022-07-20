@@ -6,15 +6,16 @@ import { AUTH } from './types'
 export const UserProvider = ({ children }) => {
   // Estado inicial
   const initialState = {
-    isAuth: false
+    isAuth: window.sessionStorage.getItem('token')
   }
   const [state, dispatch] = useReducer(UserReducer, initialState)
   ///funciones que modifican estados
-  const setAuth = data => {
+  const setAuth = token => {
     dispatch({
       type: AUTH,
-      payload: data
+      payload: token
     })
+    window.sessionStorage.setItem('token', token)
   }
 
   return (
